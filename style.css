@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+    font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0px;
+}
+
+button {
+    font-size: 24px;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+    height: 430px;
+    width: 280px;
+    border-radius: 20px;
+    gap: 15px;
+    background: rgb(58, 58, 58);
+    box-shadow: 5px 5px 5px 5px grey;
+}
+
+.display {
+    margin-top: 10px;
+    height: 80px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    gap: 5px;
+    background: #D1E6A8;
+}
+
+.equation {
+    width: 95%;
+    font-size: 22px;
+    text-align: right;
+    background: #D1E6A8;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.equation::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.equation {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.result {
+    width: 95%;
+    padding-top: 5px;
+    text-align: right;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.clear {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.keys {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+#cls {
+    background: #E85D5F;
+}
+
+#cls:hover {
+    background: rgb(255, 162, 162);
+}
+
+#delete {
+    background: rgb(117, 117, 255);
+}
+
+#delete:hover {
+    background: rgb(158, 158, 255);
+}
+
+.type1 {
+    height: 50px;
+    margin: 10px 10px 0px 10px;
+    border: none;
+    border-radius: 6px;
+}
+
+.type2 {
+    height: 50px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    background: #808080;
+}
+
+.type2:hover {
+    background: #aaaaaa;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+button[data-operator] {
+    background: #65C8CF;
+}
+
+button[data-operator]:hover {
+    background: #97e8ee;
+}
+
+.equalto {
+    background: rgb(255, 104, 49);
+}
+
+.equalto:hover {
+    background: rgb(255, 140, 98);
+}
+
+#note {
+    margin: 0px 10px 0 10px;
+    text-align: center;
+}
