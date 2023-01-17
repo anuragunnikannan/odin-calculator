@@ -162,7 +162,6 @@ function convertToPostfix() {
         let op = opstack.remove();
         postfix.push(op);
     }
-    console.log(postfix);
     return postfix;
 }
 
