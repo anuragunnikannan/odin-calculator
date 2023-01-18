@@ -71,6 +71,9 @@ button {
     text-align: right;
     font-size: 32px;
     font-weight: bold;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
 }
 
 .clear {
@@ -87,7 +90,7 @@ button {
     background: #E85D5F;
 }
 
-#cls:hover {
+#cls:active {
     background: rgb(255, 162, 162);
 }
 
@@ -95,7 +98,7 @@ button {
     background: rgb(117, 117, 255);
 }
 
-#delete:hover {
+#delete:active {
     background: rgb(158, 158, 255);
 }
 
@@ -114,7 +117,7 @@ button {
     background: #808080;
 }
 
-.type2:hover {
+.type2:active {
     background: #aaaaaa;
 }
 
@@ -127,7 +130,7 @@ button[data-operator] {
     background: #65C8CF;
 }
 
-button[data-operator]:hover {
+button[data-operator]:active {
     background: #97e8ee;
 }
 
@@ -135,7 +138,7 @@ button[data-operator]:hover {
     background: rgb(255, 104, 49);
 }
 
-.equalto:hover {
+.equalto:active {
     background: rgb(255, 140, 98);
 }
 
