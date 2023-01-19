@@ -27,7 +27,8 @@ class Stack {
 }
 
 let equation = "";
-let d = document.querySelector(".equation");
+let equationDisplay = document.querySelector(".equation");
+let resultDisplay = document.querySelector(".result");
 const nums = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."];
 const operators = ["+", "-", "*", "/"];
 let pressedEqualTo = false;
@@ -88,43 +89,43 @@ function display(text) {
         // Condition when operator usage is valid
         if (pressedEqualTo) {
             // To replace the old equation with the last result (finalResult) when equal to is pressed at least once
-            if(document.querySelector(".result").innerText == "Undefined") {
+            if(resultDisplay.innerText == "Undefined") {
                 // If result has undefined, then reset the equation and final result
                 equation = text;
-                d.innerText = text;
-                document.querySelector(".result").innerText = "0";
+                equationDisplay.innerText = text;
+                resultDisplay.innerText = "0";
                 finalResult = 0;
                 pressedEqualTo = false;
             }
             equation = finalResult + text;
-            d.innerText = finalResult + convertOperatorToSymbol(text);
+            equationDisplay.innerText = finalResult + convertOperatorToSymbol(text);
         }
         else {
-            // Condition when equal to was not pressed
+            // Condition when equal to was not pressed, simply continue appending the operators or numbers with the equation
             equation += text;
-            d.innerText += convertOperatorToSymbol(text);
+            equationDisplay.innerText += convertOperatorToSymbol(text);
         }
     }
     else {
         // Condition when a number was entered
-        if(document.querySelector(".result").innerText == "Undefined") {
+        if(resultDisplay.innerText == "Undefined") {
             // If result has undefined, then reset the equation and final result
             equation = "";
-            d.innerText = "";
-            document.querySelector(".result").innerText = "0";
+            equationDisplay.innerText = "";
+            resultDisplay.innerText = "0";
             finalResult = 0;
             pressedEqualTo = false;
         }
         equation += text;
-        d.innerText += text;
+        equationDisplay.innerText += text;
     }
 }
 
 //For clearing the display
 function erase() {
     equation = "";
-    d.innerText = equation;
-    document.querySelector(".result").innerText = "0";
+    equationDisplay.innerText = equation;
+    resultDisplay.innerText = "0";
     pressedEqualTo = false;
     finalResult = 0;
 }
@@ -132,9 +133,13 @@ function erase() {
 //For deleting character by character
 function del() {
     equation = equation.substring(0, equation.length - 1);
-    d.innerText = d.innerText.substring(0, d.innerText.length - 1);
+    equationDisplay.innerText = equationDisplay.innerText.substring(0, equationDisplay.innerText.length - 1);
     pressedEqualTo = false;
     finalResult = false;
+    if(equationDisplay.innerText.length === 0) {
+        // To reset display when there is no equation
+        resultDisplay.innerText = "0";
+    }
 }
 
 //For getting operator precedence
@@ -158,7 +163,7 @@ function operate(exp1, exp2, op) {
             if (exp2 != 0)
                 return exp1 / exp2;
             else {
-                document.querySelector(".result").innerText = "Undefined";
+                resultDisplay.innerText = "Undefined";
                 return null;
             }
     }
@@ -228,7 +233,7 @@ function evaluate() {
     }
     finalResult = Math.round(finalResult * 1000000) / 1000000; //Rounding off to 6 decimal places
     if (finalResult != null)
-        document.querySelector(".result").innerText = finalResult;
+        resultDisplay.innerText = finalResult;
 }
 
 let numberButtons = document.querySelectorAll("[data-number]");
