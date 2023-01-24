@@ -22,7 +22,7 @@ button {
     flex-direction: column;
     justify-content: center;
     padding: 15px;
-    height: 430px;
+    height: 485px;
     width: 280px;
     border-radius: 20px;
     gap: 15px;
@@ -48,8 +48,6 @@ button {
     text-align: right;
     background: #D1E6A8;
     overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
