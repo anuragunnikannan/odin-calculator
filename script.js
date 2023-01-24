@@ -323,6 +323,7 @@ function convertToPostfix() {
 
 // Evaluates the above converted postfix expression
 function evaluate() {
+    pressedEqualTo = true;
     let postfix = convertToPostfix();
 
     // When the equation is not valid
